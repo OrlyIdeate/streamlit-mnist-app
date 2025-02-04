@@ -38,7 +38,7 @@ print(f"device: {device}")
 
 # モデルのロード
 model = CNN()
-model.load_state_dict(torch.load('streamlit-mnist-app/src/model/trained_mnist_cnn_model.pth', map_location=torch.device(device)))
+model.load_state_dict(torch.load('./model/trained_mnist_cnn_model.pth', map_location=torch.device(device)))
 model.eval()
 
 # 画像の前処理
