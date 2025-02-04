@@ -64,7 +64,7 @@ st.write("手書きの数字を描いて、予測を行います。")
 
 # キャンバスの設定
 canvas_result = st_canvas(
-    fill_color="black",  # 背景を黒にする
+    # fill_color="black",  # 背景を黒にする
     stroke_color="white",  # ペンの色を白にする
     stroke_width=20,  # 太めに描画（モデルが認識しやすい）
     background_color="black",
