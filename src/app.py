@@ -47,7 +47,7 @@ def preprocess_image(image):
         transforms.Grayscale(num_output_channels=1),  # グレースケール変換
         transforms.Resize((28, 28)),  # 28×28にリサイズ
         transforms.ToTensor(),  # テンソル化（値を0-1に正規化）
-        # transforms.Normalize((0.5,), (0.5,))  # 平均0.5, 標準偏差0.5で正規化
+        transforms.Normalize((0.5,), (0.5,))  # 平均0.5, 標準偏差0.5で正規化
     ])
     return transform(image).unsqueeze(0)  # (1, 1, 28, 28) にリシェイプ
 
