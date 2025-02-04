@@ -47,7 +47,7 @@ def preprocess_image(image):
         transforms.Grayscale(num_output_channels=1),  # グレースケール変換
         transforms.Resize((28, 28)),  # 28×28にリサイズ
         transforms.ToTensor(),  # テンソル化（値を0-1に正規化）
-        transforms.Normalize((0.5,), (0.5,))  # 平均0.5, 標準偏差0.5で正規化
+        # transforms.Normalize((0.5,), (0.5,))  # 平均0.5, 標準偏差0.5で正規化
     ])
     return transform(image).unsqueeze(0)  # (1, 1, 28, 28) にリシェイプ
 
@@ -64,7 +64,7 @@ st.write("手書きの数字を描いて、予測を行います。")
 
 # キャンバスの設定
 canvas_result = st_canvas(
-    # fill_color="black",  # 背景を黒にする
+    fill_color="black",  # 背景を黒にする
     stroke_color="white",  # ペンの色を白にする
     stroke_width=20,  # 太めに描画（モデルが認識しやすい）
     background_color="black",
